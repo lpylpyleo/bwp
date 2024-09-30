@@ -1,0 +1,22 @@
+[
+    {
+        "name": "般若",
+        "atk": 3,
+        "health": 4
+    },
+    {
+        "name": "藤姬",
+        "atk": 1,
+        "health": 1
+    },
+    {
+        "name": "鬼切",
+        "atk": 2,
+        "health": 4
+    },
+    {
+        "name": "酒吞",
+        "atk": 2,
+        "health": 6
+    }
+]

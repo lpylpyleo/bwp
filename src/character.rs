@@ -1,4 +1,4 @@
-use std::{default, error::Error, fs::File, io::BufReader};
+use std::{error::Error, fs::File, io::BufReader};
 
 use rand::{seq::SliceRandom, thread_rng};
 use serde::{Deserialize, Serialize};

@@ -1,4 +1,3 @@
-use std::ops::Deref;
 
 use color_eyre::Result;
 use ratatui::{prelude::*, widgets::*};
@@ -23,7 +22,7 @@ impl Home {
         Self::default()
     }
 
-    fn render_middle_area<'a>(&mut self, f: &mut Frame, area: Rect, game: &'a Game) {
+    fn render_middle_area(&mut self, f: &mut Frame, area: Rect, game: &Game) {
         let middle = Paragraph::new(Text::raw(format!("Round: {}", game.round)))
             .block(Block::bordered().title("Status"))
             .style(Style::new())
@@ -31,13 +30,13 @@ impl Home {
         f.render_widget(middle, area);
     }
 
-    fn render_action_area<'a>(&mut self, f: &mut Frame, area: Rect, game: &'a Game) {
+    fn render_action_area(&mut self, f: &mut Frame, area: Rect, game: &Game) {
         let state = &game.state;
 
 
         let text = match state {
-            GameState::WaitingLevelUp => vec![Line::styled(format!("等待选择升级角色"), Style::new().yellow())],
-            GameState::WaitingPlayerInput =>  vec![Line::styled(format!("等待玩家出击"), Style::new().yellow())],
+            GameState::WaitingLevelUp => vec![Line::styled("等待选择升级角色".to_string(), Style::new().yellow())],
+            GameState::WaitingPlayerInput =>  vec![Line::styled("等待玩家出击".to_string(), Style::new().yellow())],
         };
 
         let p = Paragraph::new(text)

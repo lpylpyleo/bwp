@@ -1,12 +1,7 @@
-use ratatui::style::Style;
-use ratatui::style::Stylize;
-use ratatui::text::Line;
-use ratatui::text::Span;
 
 use crate::character::*;
 use crate::utils::*;
 
-const CHARACTER_COUNT: u8 = 4;
 #[derive(Debug)]
 pub struct Player {
     pub name: String,
@@ -16,7 +11,7 @@ pub struct Player {
 
 impl Player {
     pub fn level_up_characters(&mut self, points: u8) {
-        for point_i in 0..points {
+        for _point_i in 0..points {
             // 找出当前等级最低的角色
             let min_level = self.characters.iter().map(|ch| ch.level).min().unwrap_or(0);
 

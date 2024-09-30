@@ -54,7 +54,7 @@ impl<'a> Player<'a> {
 }
 
 impl<'a> Component for Player<'a> {
-    fn draw(&mut self, context: BuildContext, frame: &mut Frame, area: Rect) -> Result<()> {
+    fn draw(&mut self, _context: BuildContext, frame: &mut Frame, area: Rect) -> Result<()> {
         let player = &self.player;
         let p = Paragraph::new(self.display_status())
             .block(
